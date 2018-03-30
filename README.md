@@ -1,6 +1,7 @@
 # lib-internal-router
 
 [![jitpack_badge](https://jitpack.io/v/tfSheol/lib-internal-router.svg)](https://jitpack.io/#tfSheol/lib-internal-router)
+[![codebeat badge](https://codebeat.co/badges/382c5525-61ab-484c-859b-4fb9889070aa)](https://codebeat.co/projects/github-com-tfsheol-lib-internal-router-master)
 [![Build Status](https://travis-ci.org/tfSheol/lib-internal-router.svg?branch=master)](https://travis-ci.org/tfSheol/lib-internal-router)
 
 ## Maven
