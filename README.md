@@ -23,7 +23,7 @@
 <dependency>
   <groupId>com.github.tfSheol</groupId>
   <artifactId>lib-internal-router</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 
@@ -42,7 +42,7 @@ allprojects {
 ### Dependency
 ```
 dependencies {
-  compile 'com.github.tfSheol:lib-internal-router:0.0.1'
+  compile 'com.github.tfSheol:lib-internal-router:0.0.2'
 }
 ``` 
 
