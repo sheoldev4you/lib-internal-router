@@ -3,7 +3,7 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: "tfSheol-github"
+    organization: "tfsheol-github"
     token:
       secure: "12f5caa43eece32bebab2422252bc88faff6367d"
 jdk:
