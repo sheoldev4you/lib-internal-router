@@ -21,10 +21,12 @@ public class InternalRouter {
     final Matcher matcher = Pattern.compile(internalRouterObj.getRegex())
         .matcher(internalRouterObj.getRoute());
     final Stream.Builder<String> stringBuilder = Stream.builder();
-    while (matcher.find()) {
-      stringBuilder.add(matcher.group());
+    if (matcher.find()) {
+      for (int i = 0; i < matcher.groupCount(); i++) {
+        stringBuilder.add(matcher.group(i + 1));
+      }
     }
-    return stringBuilder.build().skip(1);
+    return stringBuilder.build();
   }
 
   private Optional<InternalRouterObj> findRoute(Class<?> currentClass,

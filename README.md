@@ -47,9 +47,13 @@ dependencies {
 ``` 
 
 ## Examples
-See in Test folder `SimpleExample.java`
+See in Test folder `example.SimpleExample.java`
+
+## Regex
+You can use this site for test your regex : [https://regex101.com/](https://regex101.com/)
 
 ## Todo
 - [x] Lib base
-- [ ] Add more examples
+- [x] Add more examples
+- [ ] Add Jackson deserialization support
 - [ ] Make documentation
