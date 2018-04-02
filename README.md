@@ -112,6 +112,15 @@ public class ControllerExample {
 }
 ```
 
+Output Test :
+
+```
+[main] INFO example.SimpleExample - "test" => "ok"
+[main] INFO example.SimpleExample - "simple regex test : bla" => "bla"
+[main] INFO example.SimpleExample - "simple regex number test : 42" => "42"
+[main] INFO example.SimpleExample - "power fire level 10 with WATER" => "fire / 10 / WATER"
+```
+
 ## Regex
 You can use this site for test your regex : [https://regex101.com/](https://regex101.com/)
 
