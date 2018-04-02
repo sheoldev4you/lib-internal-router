@@ -4,6 +4,7 @@
 [![codebeat badge](https://codebeat.co/badges/382c5525-61ab-484c-859b-4fb9889070aa)](https://codebeat.co/projects/github-com-tfsheol-lib-internal-router-master)
 [![Build Status](https://travis-ci.org/tfSheol/lib-internal-router.svg?branch=master)](https://travis-ci.org/tfSheol/lib-internal-router)
 [![Sonar_maintainability_rating](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=sqale_rating)](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=sqale_rating)
+
 [![Sonar_Coverage](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=coverage)](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=coverage)
 [![Sonar_Bugs](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=bugs)](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=bugs)
 [![Sonar_Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=vulnerabilities)](https://sonarcloud.io/api/project_badges/measure?project=fr.sheol.lib%3Alib-internal-router&metric=vulnerabilities)
