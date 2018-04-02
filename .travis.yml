@@ -1,6 +1,16 @@
 language: java
 sudo: false
+install: true
 addons:
-  apt:
-    packages:
-      - oracle-java8-installer
+  sonarcloud:
+    organization: "tfSheol-github"
+    token:
+      secure: "12f5caa43eece32bebab2422252bc88faff6367d"
+jdk:
+  - oraclejdk8
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
