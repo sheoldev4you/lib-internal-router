@@ -47,7 +47,70 @@ dependencies {
 ``` 
 
 ## Examples
-See in Test folder `example.SimpleExample.java`
+See in Test folder `example.SimpleExample.java` and `example.controller.ControllerExample.java`
+
+```java
+public class SimpleExample {
+  private static final Logger LOGGER = LoggerFactory.getLogger(SimpleExample.class);
+
+  @Test
+  public void simpleExample() {
+    InternalRouter internalRouter = new InternalRouter()
+            .withInternalRouteMapper(
+                    new InternalRouteMapper()
+                            .withAddPackageController("example/controller")
+            );
+    String result = internalRouter.resolve("test");
+    if (null != result) {
+      LOGGER.info("\"test\" => \"{}\"", result);
+    }
+
+    result = internalRouter.resolve("simple regex test : bla");
+    if (null != result) {
+      LOGGER.info("\"simple regex test : bla\" => \"{}\"", result);
+    }
+
+    Integer numberResult = internalRouter.resolve("simple regex number test : 42");
+    if (null != numberResult) {
+      LOGGER.info("\"simple regex number test : 42\" => \"{}\"", numberResult);
+    }
+
+    ObjectExample objectExample = internalRouter.resolve("power fire level 10 with WATER");
+    if (null != objectExample) {
+      LOGGER.info("\"power fire level 10 with WATER\" => \"{} / {} / {}\"",
+              objectExample.getPower(), objectExample.getLevel(), objectExample.getAddon());
+    }
+  }
+}
+```
+
+```java
+@InternalController
+public class ControllerExample {
+  @InternalRoute("test")
+  public String testRoute() {
+    return "ok";
+  }
+
+  @InternalRoute("simple regex test : (.*)$")
+  public String testSimpleRegex(String value) {
+    return value;
+  }
+
+  @InternalRoute("simple regex number test : ([0-9]*)$")
+  public int testSimpleNumberRegex(int value) {
+    return value;
+  }
+
+  @InternalRoute("power ([a-z]*) level ([0-9]*) with ([A-Z]*$)")
+  public ObjectExample testWithObject(String power, int level, String addon) {
+    return new ObjectExample()
+            .withAddon(addon)
+            .withPower(power)
+            .withLevel(level);
+  }
+}
+```
 
 ## Regex
 You can use this site for test your regex : [https://regex101.com/](https://regex101.com/)
@@ -55,5 +118,5 @@ You can use this site for test your regex : [https://regex101.com/](https://rege
 ## Todo
 - [x] Lib base
 - [x] Add more examples
-- [ ] Add Jackson deserialization support
+- [ ] Add Jackson deserialization support with JSON
 - [ ] Make documentation
