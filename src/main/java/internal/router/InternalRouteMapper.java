@@ -1,8 +1,7 @@
 package internal.router;
 
-import org.reflections.Reflections;
-
 import internal.router.annotation.InternalController;
+import org.reflections.Reflections;
 
 import java.util.HashMap;
 import java.util.Map;

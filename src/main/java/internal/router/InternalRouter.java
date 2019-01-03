@@ -1,9 +1,8 @@
 package internal.router;
 
+import internal.router.annotation.InternalRoute;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import internal.router.annotation.InternalRoute;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
