@@ -27,8 +27,8 @@ public class ControllerExample {
   @InternalRoute("power ([a-z]*) level ([0-9]*) with ([A-Z]*$)")
   public ObjectExample testWithObject(String power, int level, String addon) {
     return new ObjectExample()
-        .withAddon(addon)
-        .withPower(power)
-        .withLevel(level);
+            .withAddon(addon)
+            .withPower(power)
+            .withLevel(level);
   }
 }

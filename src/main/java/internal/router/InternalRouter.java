@@ -18,7 +18,7 @@ public class InternalRouter {
 
   private Stream<String> matchStream(InternalRouterObj internalRouterObj) {
     final Matcher matcher = Pattern.compile(internalRouterObj.getRegex())
-        .matcher(internalRouterObj.getRoute());
+            .matcher(internalRouterObj.getRoute());
     final Stream.Builder<String> stringBuilder = Stream.builder();
     if (matcher.find()) {
       for (int i = 0; i < matcher.groupCount(); i++) {
@@ -32,13 +32,13 @@ public class InternalRouter {
                                                 String route,
                                                 Class<? extends InternalRoute> annotation) {
     return Arrays.stream(currentClass.getDeclaredMethods())
-        .filter(method -> method.isAnnotationPresent(annotation)
-            && route.matches(method.getAnnotation(annotation).value()))
-        .map(method -> new InternalRouterObj()
-            .widthRoute(route)
-            .withCurrentClass(currentClass)
-            .withMethod(method)
-            .withRegex(method.getAnnotation(annotation).value())).findFirst();
+            .filter(method -> method.isAnnotationPresent(annotation)
+                    && route.matches(method.getAnnotation(annotation).value()))
+            .map(method -> new InternalRouterObj()
+                    .widthRoute(route)
+                    .withCurrentClass(currentClass)
+                    .withMethod(method)
+                    .withRegex(method.getAnnotation(annotation).value())).findFirst();
   }
 
   public void setInternalRouteMapper(InternalRouteMapper internalRouteMapper) {
@@ -53,7 +53,7 @@ public class InternalRouter {
   public <T> T resolve(String route, Object... args) {
     AtomicReference<T> object = new AtomicReference<>();
     internalRouteMapper.getInternalController()
-        .forEach((key, value) -> object.set(action(value, route, args)));
+            .forEach((key, value) -> object.set(action(value, route, args)));
     return object.get();
   }
 
@@ -71,9 +71,9 @@ public class InternalRouter {
       InternalRouterObj internalRouterObj = internalRouterObjOptional.get();
       try {
         return InternalRouterUtil.cast(internalRouterObj.getMethod().invoke(
-            currentClass.newInstance(),
-            args.length == 0 ? matchStream(internalRouterObj)
-                .map(InternalRouterUtil::getNumeric).toArray() : args
+                currentClass.newInstance(),
+                args.length == 0 ? matchStream(internalRouterObj)
+                        .map(InternalRouterUtil::getNumeric).toArray() : args
         ));
       } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
         LOGGER.error("{}", e);

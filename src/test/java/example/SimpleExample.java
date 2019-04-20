@@ -13,10 +13,10 @@ public class SimpleExample {
   @Test
   public void simpleExample() {
     InternalRouter internalRouter = new InternalRouter()
-        .withInternalRouteMapper(
-            new InternalRouteMapper()
-                .withAddPackageController("example/controller")
-        );
+            .withInternalRouteMapper(
+                    new InternalRouteMapper()
+                            .withAddPackageController("example/controller")
+            );
     String result = internalRouter.resolve("test");
     if (null != result) {
       LOGGER.info("\"test\" => \"{}\"", result);
@@ -35,7 +35,7 @@ public class SimpleExample {
     ObjectExample objectExample = internalRouter.resolve("power fire level 10 with WATER");
     if (null != objectExample) {
       LOGGER.info("\"power fire level 10 with WATER\" => \"{} / {} / {}\"",
-          objectExample.getPower(), objectExample.getLevel(), objectExample.getAddon());
+              objectExample.getPower(), objectExample.getLevel(), objectExample.getAddon());
     }
   }
 }
